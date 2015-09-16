@@ -1,11 +1,11 @@
 android-aes-jni
 ---------------
-####Build
+####1.Build
     ndk-build clean
     ndk-build
 
 
-####The MIT License (MIT)
+####2.The MIT License (MIT)
 
 Copyright (c) 2015 panxw{ }
 
