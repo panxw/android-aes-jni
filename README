@@ -1,0 +1,4 @@
+android-aes-jni
+---------------
+ndk-build clean
+ndk-build
