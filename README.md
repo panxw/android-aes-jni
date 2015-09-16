@@ -1,7 +1,7 @@
 android-aes-jni
 ---------------
-    ndk-build clean
-    ndk-build
+ndk-build clean
+ndk-build
 
 
 
