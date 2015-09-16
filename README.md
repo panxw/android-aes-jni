@@ -5,7 +5,9 @@ android-aes-jni
     ndk-build
 
 
-####2.The MIT License (MIT)
+####2.License
+
+The MIT License (MIT)
 
 Copyright (c) 2015 panxw{ }
 
