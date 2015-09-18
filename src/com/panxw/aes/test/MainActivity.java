@@ -5,6 +5,7 @@ import java.io.UnsupportedEncodingException;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.panxw.aes.java.JavaAESCryptor;
 import com.panxw.aes.jni.R;
 import com.panxw.aes.jni.AESCryptor;
 
@@ -17,6 +18,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		try {
+			System.out.println("======jni-crypt-test======");
 			byte[] data = TESTDATA.getBytes("UTF-8");
 			data=AESCryptor.crypt(data, System.currentTimeMillis(), 0);
 			String hexStr = AESCryptor.bytes2HexStr(data);
@@ -26,9 +28,21 @@ public class MainActivity extends Activity {
 			data=AESCryptor.crypt(data, System.currentTimeMillis(), 1);
 			System.out.println("decrypt:"+new String(data,"UTF-8"));
 			
-			data = AESCryptor.read("/mnt/sdcard/test.txt", System.currentTimeMillis());
-			System.out.println("read:"+new String(data,"UTF-8"));
+			System.out.println("======java-crypt-test======");
+			data = TESTDATA.getBytes("UTF-8");
+			data=JavaAESCryptor.encrypt(data);
+			hexStr = AESCryptor.bytes2HexStr(data);
+			System.out.println("encrypt:"+hexStr);
 			
+			data = AESCryptor.hexStr2Bytes(hexStr);
+			data=JavaAESCryptor.decrypt(data);
+			System.out.println("decrypt:"+new String(data,"UTF-8"));
+			
+			System.out.println("======jni-file-test======");
+			data = AESCryptor.read("/mnt/sdcard/test.txt", System.currentTimeMillis());
+			if(data!=null) {
+				System.out.println("read:"+new String(data,"UTF-8"));
+			}
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
