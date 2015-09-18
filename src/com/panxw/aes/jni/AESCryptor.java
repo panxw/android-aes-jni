@@ -1,6 +1,6 @@
 package com.panxw.aes.jni;
 
-public class SecurityUtils {
+public class AESCryptor {
 	static {
 		try {
 			System.loadLibrary("aes_jni");

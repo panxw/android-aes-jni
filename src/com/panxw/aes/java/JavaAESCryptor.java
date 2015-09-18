@@ -1,16 +1,16 @@
-package com.panxw.aes.jni.java;
+package com.panxw.aes.java;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.panxw.aes.jni.SecurityUtils;
+import com.panxw.aes.jni.AESCryptor;
 
 //使用256位长度密钥需查看的链接·
 //http://czj4451.iteye.com/blog/1986483
 //http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html
 //http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html
-public class AESCryptor {
+public class JavaAESCryptor {
 
     private static final String TEST_DATA = "kLNyk5O9jj0kG/lqskHCLs7HQttQjqMwNToSXGVs7WraXf0bVpBA1vaE+30Mz2wu/6dmmU6mHOVAye+w9zrgZswPAjqEtU8nAa7+z5RDeil/5kBEEnV/IVO+Xry6YO4AL6xuHm/6k32zn6C8R2ZCvNL/vvUbk49YH5MEyCU/9See8Y8hqM9jPTmGc9+izcIjZtkMnC1PfShwvgdtE5gkkBqVJx20bnjyzEEPIb3dxt/DlhmbnpBeC6GWzCHjzvdLcC3mfYHoP6+A1r+oXjDxGFfKIDgtwaUZfzAKhlpsx9gOn7e2CaC85Nyu2Xy1vjTBlJiwN1EPvI87nQrWWqOBDyRRzhlbc+f2pEfZ6yIQKXnR7QKLKptxnD3jcKuH5r2l82b1Q3OSFTCYRCzYtA/CYbdJq4gRxx8bFwSeqmxtYy0=kLNyk5O9jj0kG/lqskHCLs7HQttQjqMwNToSXGVs7WraXf0bVpBA1vaE+30Mz2wu/6dmmU6mHOVAye+w9zrgZswPAjqEtU8nAa7+z5RDeil/5kBEEnV/IVO+Xry6YO4AL6xuHm/6k32zn6C8R2ZCvNL/vvUbk49YH5MEyCU/9See8Y8hqM9jPTmGc9+izcIjZtkMnC1PfShwvgdtE5gkkBqVJx20bnjyzEEPIb3dxt/DlhmbnpBeC6GWzCHjzvdLcC3mfYHoP6+A1r+oXjDxGFfKIDgtwaUZfzAKhlpsx9gOn7e2CaC85Nyu2Xy1vjTBlJiwN1EPvI87nQrWWqOBDyRRzhlbc+f2pEfZ6yIQKXnR7QKLKptxnD3jcKuH5r2l82b1Q3OSFTCYRCzYtA/CYbdJq4gRxx8bFwSeqmxtYy0=";
 
@@ -19,7 +19,7 @@ public class AESCryptor {
         // 加密
         System.out.println("加密前：" + TEST_DATA);
         byte[] encryptResult = encrypt(TEST_DATA.getBytes("UTF-8"));
-        System.out.println("加密后："+SecurityUtils.bytes2HexStr(encryptResult));
+        System.out.println("加密后："+AESCryptor.bytes2HexStr(encryptResult));
 
         // 解密
         byte[] decryptResult = decrypt(encryptResult);
