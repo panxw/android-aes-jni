@@ -8,3 +8,6 @@ android-aes-jni
     cd android-aes-jni
     ndk-build clean
     ndk-build
+    
+    
+Have fun!
