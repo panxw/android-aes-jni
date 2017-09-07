@@ -68,7 +68,7 @@ JNIEXPORT jbyteArray JNICALL android_native_aes(JNIEnv *env, jclass clazz,
 		free(input);
 		return NULL;
 	}
-	memset(buff, src_len, 0);
+	memset(buff, 0, src_len);
 
 	//set key & iv
 	unsigned int key_schedule[AES_BLOCK_SIZE * 4] = { 0 }; //>=53(这里取64)
