@@ -13,10 +13,6 @@ android-aes-jni
     ndk-build
 ```
 
-#### 3.联系作者
-Email: winfirm(#)163.com  
-QQ交流群: 168563980  
-
 
 ## License
 
